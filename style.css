@@ -1,54 +1,82 @@
-html {
-    scroll-behavior: smooth;
-}
-body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding-top: 100 px; /* Para que el menú fijo no tape el contenido */
-    background-color: #f9f9f9;
+/* Importar fuente moderna */
+@ import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+html { 
+    scroll-behavior: smooth; 
 }
 
-/* Estilos del Menú */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f7f6;
+}
+
+/* Menú Estilo Interlim */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
-    padding: 10 px 5 %;
+    background-color: white;
+    padding: 15 px 5 %;
     position: fixed;
     top: 0;
-    width: 90 %;
+    left: 0;
+    right: 0;
     box-shadow: 0 2 px 10 px rgba (0,0,0,0.1);
     z-index: 1000;
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 1.5 rem;
+    font-weight: 700;
+    font-size: 1.8 rem;
     color: #2c3e50;
+    letter-spacing: 1 px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20 px;
+    gap: 25 px;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #2c3e50;
-    font-weight: 500;
-    transition: color 0.3 s;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85 rem;
+    transition: 0.3 s;
 }
 
 .nav-links a:hover {
     color: #3498db;
 }
 
-/* Ajuste del Header */
-header {
-    background: linear-gradient (135 deg, #2c3e50, #34495e);
-    color: white;
-    padding: 80 px 20 px;
-    text-align: center;
+/* Tarjetas de Servicio */
+.service-card {
+    background: white;
+    padding: 40 px 30 px;
+    border-radius: 12 px;
+    box-shadow: 0 10 px 30 px rgba (0,0,0,0.05);
+    transition: all 0.3 s ease;
+    border-bottom: 4 px solid #3498db; /* Línea de color abajo */
+}
+
+.service-card:hover {
+    transform: translateY (-10 px);
+    box-shadow: 0 15 px 35 px rgba (0,0,0,0.1);
+}
+
+.service-card h3 {
+    color: #2c3e50;
+    margin: 15 px 0;
+}
+
+/* Espaciado para anclas (evita que el menú tape el título) */
+h2[id], section[id] {
+    scroll-margin-top: 100 px;
 }
