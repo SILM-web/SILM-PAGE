@@ -120,6 +120,41 @@ h2[id], section[id] {
     scroll-margin-top: 100 px;
 }
 
+/* Estilo del Botón Flotante */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20 px;
+    right: 20 px;
+    background-color: #55efc4; /* Tu verde agua */
+    color: #2d3436; /* Tu gris oscuro para el texto */
+    padding: 12 px 20 px;
+    border-radius: 50 px;
+    display: flex;
+    align-items: center;
+    gap: 10 px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4 px 15 px rgba (0,0,0,0.4);
+    z-index: 10000;
+    transition: transform 0.3 s, background-color 0.3 s;
+}
+
+.whatsapp-float:hover {
+    transform: scale (1.1);
+    background-color: #00b894; /* Un verde un poco más intenso al pasar el mouse */
+}
+
+/* Ocultar el texto en celulares muy pequeños para que no moleste */
+@ media (max-width: 480px) {
+    .whatsapp-float span {
+        display: none;
+    }
+    .whatsapp-float {
+        padding: 15 px;
+        border-radius: 50 %;
+    }
+}
+
 
 
 
