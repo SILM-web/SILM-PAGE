@@ -121,40 +121,47 @@ h2[id], section[id] {
 }
 
 /* Estilo del Botón Flotante */
+/* Botón Flotante de WhatsApp a la Derecha */
 .whatsapp-float {
     position: fixed;
-    bottom: 20 px;
-    right: 20 px;
+    bottom: 30 px;
+    right: 30 px; /* Asegurado a la derecha */
     background-color: #55efc4; /* Tu verde agua */
-    color: #2d3436; /* Tu gris oscuro para el texto */
-    padding: 12 px 20 px;
-    border-radius: 50 px;
     display: flex;
     align-items: center;
     gap: 10 px;
-    text-decoration: none;
+    padding: 12 px 20 px;
+    border-radius: 50 px;
+    text-decoration: none ! important; /* Quita el subrayado */
     font-weight: bold;
     box-shadow: 0 4 px 15 px rgba (0,0,0,0.4);
     z-index: 10000;
-    transition: transform 0.3 s, background-color 0.3 s;
+    transition: all 0.3 s ease;
+}
+
+/* Forzar el color del texto para que NO sea violeta */
+.whatsapp-float span {
+    color: #2d3436 ! important ; /* Gris oscuro metalizado para máxima legibilidad */
+    font-size: 16 px;
 }
 
 .whatsapp-float:hover {
     transform: scale (1.1);
-    background-color: #00b894; /* Un verde un poco más intenso al pasar el mouse */
+    background-color: #00b894;
+    box-shadow: 0 6 px 20 px rgba (0,0,0,0.5);
 }
 
-/* Ocultar el texto en celulares muy pequeños para que no moleste */
-@ media (max-width: 480px) {
-    .whatsapp-float span {
-        display: none;
-    }
+/* Ajuste para móviles */
+@ media (max-width: 480 px) {
     .whatsapp-float {
-        padding: 15 px;
-        border-radius: 50 %;
+        bottom: 20 px;
+        right: 20 px;
+        padding: 12 px;
+    }
+    .whatsapp-float span {
+        display: none; /* En celular queda solo el circulito con el logo */
     }
 }
-
 
 
 
